@@ -1,0 +1,26 @@
+<svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#60A5FA"/>
+  <rect x="50" y="50" width="300" height="100" fill="#1E40AF"/>
+  <text x="200" y="80" font-family="Arial" font-size="16" fill="#F0F9FF" text-anchor="middle">Customer Segmentation Model</text>
+  
+  <!-- Cluster visualization -->
+  <circle cx="120" cy="100" r="30" fill="#F0F9FF" fill-opacity="0.3" stroke="#F0F9FF" stroke-width="1"/>
+  <circle cx="200" cy="90" r="25" fill="#F0F9FF" fill-opacity="0.3" stroke="#F0F9FF" stroke-width="1"/>
+  <circle cx="270" cy="110" r="35" fill="#F0F9FF" fill-opacity="0.3" stroke="#F0F9FF" stroke-width="1"/>
+  
+  <!-- Data points in clusters -->
+  <circle cx="110" cy="90" r="3" fill="#F0F9FF"/>
+  <circle cx="125" cy="95" r="3" fill="#F0F9FF"/>
+  <circle cx="115" cy="110" r="3" fill="#F0F9FF"/>
+  <circle cx="130" cy="105" r="3" fill="#F0F9FF"/>
+  
+  <circle cx="190" cy="85" r="3" fill="#F0F9FF"/>
+  <circle cx="205" cy="95" r="3" fill="#F0F9FF"/>
+  <circle cx="195" cy="100" r="3" fill="#F0F9FF"/>
+  
+  <circle cx="260" cy="100" r="3" fill="#F0F9FF"/>
+  <circle cx="275" cy="105" r="3" fill="#F0F9FF"/>
+  <circle cx="265" cy="120" r="3" fill="#F0F9FF"/>
+  <circle cx="280" cy="115" r="3" fill="#F0F9FF"/>
+  <circle cx="290" cy="105" r="3" fill="#F0F9FF"/>
+</svg>

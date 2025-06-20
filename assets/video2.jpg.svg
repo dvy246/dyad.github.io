@@ -1,0 +1,15 @@
+<svg width="400" height="225" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="225" fill="#60A5FA"/>
+  <rect x="50" y="50" width="300" height="125" fill="#1E40AF"/>
+  <text x="200" y="100" font-family="Arial" font-size="16" fill="#F0F9FF" text-anchor="middle">Project Walkthrough:</text>
+  <text x="200" y="125" font-family="Arial" font-size="16" fill="#F0F9FF" text-anchor="middle">Sentiment Analysis Tool</text>
+  
+  <!-- Play button -->
+  <circle cx="200" cy="112.5" r="30" fill="#F0F9FF" fill-opacity="0.8"/>
+  <path d="M215 112.5L190 127.5V97.5L215 112.5Z" fill="#2563EB"/>
+  
+  <!-- Code elements -->
+  <rect x="70" y="150" width="260" height="15" rx="2" fill="#F0F9FF" fill-opacity="0.3"/>
+  <rect x="70" y="170" width="200" height="15" rx="2" fill="#F0F9FF" fill-opacity="0.3"/>
+  <rect x="70" y="190" width="230" height="15" rx="2" fill="#F0F9FF" fill-opacity="0.3"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg width="600" height="338" viewBox="0 0 600 338" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="338" fill="#2563EB"/>
+  <rect x="50" y="50" width="500" height="238" fill="#1E40AF"/>
+  <circle cx="300" cy="169" r="60" fill="#F0F9FF" fill-opacity="0.8"/>
+  <path d="M320 169L290 189V149L320 169Z" fill="#2563EB"/>
+  <text x="300" y="270" font-family="Arial" font-size="24" fill="#F0F9FF" text-anchor="middle">Introduction Video</text>
+</svg>

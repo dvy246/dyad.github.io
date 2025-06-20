@@ -1,0 +1,10 @@
+<svg width="400" height="225" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="225" fill="#60A5FA"/>
+  <rect x="50" y="50" width="300" height="125" fill="#1E40AF"/>
+  <text x="200" y="100" font-family="Arial" font-size="16" fill="#F0F9FF" text-anchor="middle">Introduction to My</text>
+  <text x="200" y="125" font-family="Arial" font-size="16" fill="#F0F9FF" text-anchor="middle">Data Science Journey</text>
+  
+  <!-- Play button -->
+  <circle cx="200" cy="112.5" r="30" fill="#F0F9FF" fill-opacity="0.8"/>
+  <path d="M215 112.5L190 127.5V97.5L215 112.5Z" fill="#2563EB"/>
+</svg>

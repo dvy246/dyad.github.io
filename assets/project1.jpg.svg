@@ -1,0 +1,10 @@
+<svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#60A5FA"/>
+  <rect x="50" y="50" width="300" height="100" fill="#1E40AF"/>
+  <text x="200" y="110" font-family="Arial" font-size="20" fill="#F0F9FF" text-anchor="middle">Sentiment Analysis Tool</text>
+  <path d="M120 80C120 75.5817 123.582 72 128 72H272C276.418 72 280 75.5817 280 80V120C280 124.418 276.418 128 272 128H128C123.582 128 120 124.418 120 120V80Z" fill="#2563EB"/>
+  <path d="M150 90L140 110H160L150 90Z" fill="#F0F9FF"/>
+  <path d="M200 90L190 110H210L200 90Z" fill="#F0F9FF"/>
+  <path d="M250 90L240 110H260L250 90Z" fill="#F0F9FF"/>
+  <path d="M130 115C130 112.791 131.791 111 134 111H266C268.209 111 270 112.791 270 115V115C270 117.209 268.209 119 266 119H134C131.791 119 130 117.209 130 115V115Z" fill="#F0F9FF"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#60A5FA"/>
+  <rect x="50" y="50" width="300" height="100" fill="#1E40AF"/>
+  <text x="200" y="80" font-family="Arial" font-size="16" fill="#F0F9FF" text-anchor="middle">Sales Prediction Dashboard</text>
+  
+  <!-- Dashboard elements -->
+  <rect x="70" y="90" width="80" height="40" rx="4" fill="#F0F9FF"/>
+  <rect x="160" y="90" width="80" height="40" rx="4" fill="#F0F9FF"/>
+  <rect x="250" y="90" width="80" height="40" rx="4" fill="#F0F9FF"/>
+  
+  <!-- Chart lines -->
+  <path d="M80 120L100 110L120 115L140 105" stroke="#2563EB" stroke-width="2"/>
+  <path d="M170 120L190 100L210 110L230 95" stroke="#2563EB" stroke-width="2"/>
+  <path d="M260 120L280 105L300 115L320 100" stroke="#2563EB" stroke-width="2"/>
+  
+  <!-- Data points -->
+  <circle cx="100" cy="110" r="3" fill="#2563EB"/>
+  <circle cx="120" cy="115" r="3" fill="#2563EB"/>
+  <circle cx="190" cy="100" r="3" fill="#2563EB"/>
+  <circle cx="210" cy="110" r="3" fill="#2563EB"/>
+  <circle cx="280" cy="105" r="3" fill="#2563EB"/>
+  <circle cx="300" cy="115" r="3" fill="#2563EB"/>
+</svg>
