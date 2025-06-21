@@ -1,219 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divy's Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=1">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divy Yadav - Data Scientist & AI Enthusiast Portfolio</title>
+    <link rel="stylesheet" href="styles.css?v=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+<button id="admin-login-btn" class="admin-btn">Admin Login</button>
+<button id="admin-logout-btn" class="admin-btn" style="display:none;">Logout</button>
+    <header>
+        <div class="container">
+            <div class="logo">Divy Yadav</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <header>
-    <div class="container">
-      <div class="logo">Divy AI Portfolio</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#videos">Videos</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="hamburger menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </header>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hook-heading">HEY IT'S ME</h1>
+                    <h1>Divy Yadav</h1>
+                    <h2>AI & Data Science Enthusiast | Future Data Scientist</h2>
+                    <h3>Driven by curiosity, powered by data.</h3>
+                    <p>Welcome to my portfolio! I'm passionate about leveraging AI and data science to solve complex problems and extract meaningful insights. My journey in the world of data has been driven by a deep curiosity and desire to make an impact through innovative solutions.</p>
+                    <div class="career-switch-highlight">
+                        <h4>Why I Switched from B.Com to AI</h4>
+                        <p contenteditable="true" class="editable">During my commerce studies, I discovered my true passion lies in data analysis and AI. I realized my analytical mindset and problem-solving abilities were perfectly suited for the data science field, which led me to make this exciting career transition.</p>
+                    </div>
+                    <div class="social-links-hero-container">
+                        <button class="edit-btn edit-social-btn" onclick="makeEditable('hero-social')"><i class="fas fa-edit"></i> Edit Social Links</button>
+                        <div class="social-links-hero" id="hero-social">
+                            <div class="social-link-container">
+                                <input type="hidden" id="linkedin-url" class="social-link-input editable" value="https://linkedin.com/in/yourusername" readonly>
+                                <a href="#" onclick="openSocialLink('linkedin-url')" class="social-icon-btn"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                            <div class="social-link-container">
+                                <input type="hidden" id="github-url" class="social-link-input editable" value="https://github.com/yourusername" readonly>
+                                <a href="#" onclick="openSocialLink('github-url')" class="social-icon-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                            <div class="social-link-container">
+                                <input type="hidden" id="email-address" class="social-link-input editable" value="your.email@example.com" readonly>
+                                <a href="#" onclick="sendEmail('email-address')" class="social-icon-btn"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn primary-btn">Contact Me</a>
+                        <a href="#projects" class="btn secondary-btn">View Projects</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-image">
+                        <img src="assets/profile-placeholder.jpg" alt="Profile Photo" id="profile-img">
+                        <label for="profile-upload" class="upload-btn"><i class="fas fa-upload"></i></label>
+                        <input type="file" id="profile-upload" class="file-upload" accept="image/*" onchange="uploadImage(this, 'profile-img')">
+                        <p class="upload-instruction">Click to change profile photo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-intro">
+                <h3>Watch My Introduction</h3>
+                <div class="video-container">
+                    <!-- Replace with your actual video or thumbnail -->
+                    <div class="video-thumbnail">
+                        <img src="assets/video-thumbnail.jpg" alt="Video Thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="admin-block" id="admin-block">
-    <button onclick="makeEditable()">Edit</button>
-    <button onclick="saveChanges()">Save</button>
-    <button onclick="logout()">Logout</button>
-  </div>
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>With a background in B.Com Honors, I made a strategic career switch to the exciting world of AI and Machine Learning. This transition was fueled by my passion for solving real-world problems using data-driven approaches and my fascination with how AI can transform businesses.</p>
+                    <p>During my commerce studies, I discovered that the most interesting aspects were always related to data analysis and predictive modeling. I realized that my analytical mindset and problem-solving abilities were perfectly suited for the data science field, which led me to pursue this career change.</p>
+                    <p>I believe that data has the power to transform businesses and improve lives. My unique combination of business knowledge and technical skills allows me to bridge the gap between data insights and business strategy, bringing a valuable perspective to AI projects.</p>
+                    <p>I'm constantly learning and expanding my knowledge in this rapidly evolving field, with a particular interest in developing AI solutions that are both innovative and practical.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="hero" id="hero">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1 class="hook-heading" contenteditable="false">AI | ML | Data Science</h1>
-        <h2 contenteditable="false">From BCom to AI Engineer — My Journey</h2>
-        <div class="career-switch-highlight">
-          <h4 contenteditable="false">Why I Switched to AI</h4>
-          <p contenteditable="false">I’ve always been fascinated by how machines can learn and make decisions. After my BCom degree, I pursued my passion for AI, combining my analytical skills with cutting-edge machine learning and data science techniques to create real-world solutions.</p>
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming & Data</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-python"></i></div>
+                            <h4>Python</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <h4>SQL</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                            <h4>Tableau</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-table"></i></div>
+                            <h4>Pandas</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning & AI</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                            <h4>Machine Learning</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                            <h4>Deep Learning</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                            <h4>GenAI</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-comment-dots"></i></div>
+                            <h4>LLMs</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>AI Engineering</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+                            <h4>MLOps</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-link"></i></div>
+                            <h4>LangChain</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-search"></i></div>
+                            <h4>RAG</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-keyboard"></i></div>
+                            <h4>Prompt Engineering</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & Infrastructure</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-aws"></i></div>
+                            <h4>AWS</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
+                            <h4>Azure</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="cta-buttons">
-          <a href="#projects" class="btn primary-btn">View My Work</a>
-          <a href="#contact" class="btn secondary-btn">Get in Touch</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="profile-image">
-          <img id="profile-img" src="images/profile.jpg" alt="Profile Picture">
-          <input type="file" id="profile-upload" accept="image/*" style="display:none;" onchange="uploadImage(this, 'profile-img')">
-          <button class="upload-btn" onclick="document.getElementById('profile-upload').click()"><i class="fas fa-upload"></i></button>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="about" id="about">
-    <div class="container about-content">
-      <h2 class="section-title" contenteditable="false">About Me</h2>
-      <div class="about-text">
-        <p contenteditable="false">Hello! I'm Divy, a passionate AI & ML enthusiast who transitioned from a BCom background to the world of data science. I specialize in machine learning, deep learning, data analysis, and AI-powered solutions.</p>
-        <p contenteditable="false">I'm always excited to work on challenging projects and continuously learn emerging technologies that can create a positive impact.</p>
-      </div>
-    </div>
-  </section>
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="section-description">
+                <p class="edit-instructions">These project cards are fully editable. Click the edit button on any project to modify its details.</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" id="project1">
+                    <div class="project-image">
+                        <img src="assets/project1.jpg" alt="Project 1" id="project1-img">
+                        <button class="edit-btn" onclick="makeEditable('project1')"><i class="fas fa-edit"></i></button>
+                        <label for="project1-upload" class="upload-btn"><i class="fas fa-upload"></i></label>
+                        <input type="file" id="project1-upload" class="file-upload" accept="image/*" onchange="uploadImage(this, 'project1-img')">
+                    </div>
+                    <div class="project-content">
+                        <h3 contenteditable="false" class="editable">Sentiment Analysis Tool</h3>
+                        <p contenteditable="false" class="editable">A machine learning model that analyzes customer reviews to determine sentiment and extract key insights for business improvement.</p>
+                        <div class="project-tools">
+                            <span contenteditable="false" class="editable">Python</span>
+                            <span contenteditable="false" class="editable">NLTK</span>
+                            <span contenteditable="false" class="editable">Scikit-learn</span>
+                        </div>
+                        <div class="project-reason">
+                            <h4>Why I Built This:</h4>
+                            <p contenteditable="false" class="editable">To help businesses understand customer feedback at scale and make data-driven decisions to improve their products and services.</p>
+                        </div>
+                        <div class="project-links">
+                            <div class="github-input-container">
+                                <label for="github-link-1">GitHub Link:</label>
+                                <input type="text" id="github-link-1" class="github-link-input editable" value="https://github.com/username/sentiment-analysis" readonly>
+                            </div>
+                            <a href="#" class="github-link" onclick="openGitHub('github-link-1')" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card" id="project2">
+                    <div class="project-image">
+                        <img src="assets/project2.jpg" alt="Project 2" id="project2-img">
+                        <button class="edit-btn" onclick="makeEditable('project2')"><i class="fas fa-edit"></i></button>
+                        <label for="project2-upload" class="upload-btn"><i class="fas fa-upload"></i></label>
+                        <input type="file" id="project2-upload" class="file-upload" accept="image/*" onchange="uploadImage(this, 'project2-img')">
+                    </div>
+                    <div class="project-content">
+                        <h3 contenteditable="false" class="editable">Sales Prediction Dashboard</h3>
+                        <p contenteditable="false" class="editable">An interactive dashboard that forecasts sales trends using time series analysis and provides actionable insights for inventory management.</p>
+                        <div class="project-tools">
+                            <span contenteditable="false" class="editable">Python</span>
+                            <span contenteditable="false" class="editable">Pandas</span>
+                            <span contenteditable="false" class="editable">Tableau</span>
+                        </div>
+                        <div class="project-reason">
+                            <h4>Why I Built This:</h4>
+                            <p contenteditable="false" class="editable">To showcase my data analysis skills and provide insights into sales patterns for business decision-making.</p>
+                        </div>
+                        <div class="project-links">
+                            <div class="github-input-container">
+                                <label for="github-link-2">GitHub Link:</label>
+                                <input type="text" id="github-link-2" class="github-link-input editable" value="https://github.com/username/sales-dashboard" readonly>
+                            </div>
+                            <a href="#" class="github-link" onclick="openGitHub('github-link-2')" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card" id="project3">
+                    <div class="project-image">
+                        <img src="assets/project3.jpg" alt="Project 3" id="project3-img">
+                        <button class="edit-btn" onclick="makeEditable('project3')"><i class="fas fa-edit"></i></button>
+                        <label for="project3-upload" class="upload-btn"><i class="fas fa-upload"></i></label>
+                        <input type="file" id="project3-upload" class="file-upload" accept="image/*" onchange="uploadImage(this, 'project3-img')">
+                    </div>
+                    <div class="project-content">
+                        <h3 contenteditable="false" class="editable">Customer Segmentation Model</h3>
+                        <p contenteditable="false" class="editable">A clustering algorithm that segments customers based on purchasing behavior to enable targeted marketing strategies.</p>
+                        <div class="project-tools">
+                            <span contenteditable="false" class="editable">Python</span>
+                            <span contenteditable="false" class="editable">Scikit-learn</span>
+                            <span contenteditable="false" class="editable">Matplotlib</span>
+                        </div>
+                        <div class="project-reason">
+                            <h4>Why I Built This:</h4>
+                            <p contenteditable="false" class="editable">To identify customer segments for targeted marketing campaigns and improve customer retention strategies.</p>
+                        </div>
+                        <div class="project-links">
+                            <div class="github-input-container">
+                                <label for="github-link-3">GitHub Link:</label>
+                                <input type="text" id="github-link-3" class="github-link-input editable" value="https://github.com/username/customer-segmentation" readonly>
+                            </div>
+                            <a href="#" class="github-link" onclick="openGitHub('github-link-3')" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card" id="project4">
+                    <div class="project-image">
+                        <img src="assets/project4.jpg" alt="Project 4" id="project4-img">
+                        <button class="edit-btn" onclick="makeEditable('project4')"><i class="fas fa-edit"></i></button>
+                        <label for="project4-upload" class="upload-btn"><i class="fas fa-upload"></i></label>
+                        <input type="file" id="project4-upload" class="file-upload" accept="image/*" onchange="uploadImage(this, 'project4-img')">
+                    </div>
+                    <div class="project-content">
+                        <h3 contenteditable="false" class="editable">AI-Powered Chatbot</h3>
+                        <p contenteditable="false" class="editable">A conversational AI assistant built using LLMs and RAG techniques to provide accurate and contextual responses to user queries.</p>
+                        <div class="project-tools">
+                            <span contenteditable="false" class="editable">Python</span>
+                            <span contenteditable="false" class="editable">LangChain</span>
+                            <span contenteditable="false" class="editable">OpenAI API</span>
+                        </div>
+                        <div class="project-reason">
+                            <h4>Why I Built This:</h4>
+                            <p contenteditable="false" class="editable">To create an intelligent conversational agent that can assist users with information retrieval and task automation using the latest AI technologies.</p>
+                        </div>
+                        <div class="project-links">
+                            <div class="github-input-container">
+                                <label for="github-link-4">GitHub Link:</label>
+                                <input type="text" id="github-link-4" class="github-link-input editable" value="https://github.com/username/ai-chatbot" readonly>
+                            </div>
+                            <a href="#" class="github-link" onclick="openGitHub('github-link-4')" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card" id="project5">
+                    <div class="project-image">
+                        <img src="assets/project-placeholder.jpg" alt="Project 5" id="project5-img">
+                        <button class="edit-btn" onclick="makeEditable('project5')"><i class="fas fa-edit"></i></button>
+                        <label for="project5-upload" class="upload-btn"><i class="fas fa-upload"></i></label>
+                        <input type="file" id="project5-upload" class="file-upload" accept="image/*" onchange="uploadImage(this, 'project5-img')">
+                    </div>
+                    <div class="project-content">
+                        <h3 contenteditable="false" class="editable">Recommendation System</h3>
+                        <p contenteditable="false" class="editable">A personalized recommendation engine that suggests products based on user behavior and preferences using collaborative filtering.</p>
+                        <div class="project-tools">
+                            <span contenteditable="false" class="editable">Python</span>
+                            <span contenteditable="false" class="editable">TensorFlow</span>
+                            <span contenteditable="false" class="editable">Flask</span>
+                        </div>
+                        <div class="project-reason">
+                            <h4>Why I Built This:</h4>
+                            <p contenteditable="false" class="editable">To demonstrate how AI can enhance user experience by providing personalized recommendations that increase engagement and conversion rates.</p>
+                        </div>
+                        <div class="project-links">
+                            <div class="github-input-container">
+                                <label for="github-link-5">GitHub Link:</label>
+                                <input type="text" id="github-link-5" class="github-link-input editable" value="https://github.com/username/recommendation-system" readonly>
+                            </div>
+                            <a href="#" class="github-link" onclick="openGitHub('github-link-5')" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card" id="project6">
+                    <div class="project-image">
+                        <img src="assets/project-placeholder.jpg" alt="Project 6" id="project6-img">
+                        <button class="edit-btn" onclick="makeEditable('project6')"><i class="fas fa-edit"></i></button>
+                        <label for="project6-upload" class="upload-btn"><i class="fas fa-upload"></i></label>
+                        <input type="file" id="project6-upload" class="file-upload" accept="image/*" onchange="uploadImage(this, 'project6-img')">
+                    </div>
+                    <div class="project-content">
+                        <h3 contenteditable="false" class="editable">Fraud Detection System</h3>
+                        <p contenteditable="false" class="editable">An anomaly detection system that identifies potentially fraudulent transactions using machine learning algorithms.</p>
+                        <div class="project-tools">
+                            <span contenteditable="false" class="editable">Python</span>
+                            <span contenteditable="false" class="editable">Scikit-learn</span>
+                            <span contenteditable="false" class="editable">XGBoost</span>
+                        </div>
+                        <div class="project-reason">
+                            <h4>Why I Built This:</h4>
+                            <p contenteditable="false" class="editable">To showcase how AI can be applied to financial security, helping businesses detect and prevent fraudulent activities in real-time.</p>
+                        </div>
+                        <div class="project-links">
+                            <div class="github-input-container">
+                                <label for="github-link-6">GitHub Link:</label>
+                                <input type="text" id="github-link-6" class="github-link-input editable" value="https://github.com/username/fraud-detection" readonly>
+                            </div>
+                            <a href="#" class="github-link" onclick="openGitHub('github-link-6')" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 7 (Hidden by default, can be shown when needed) -->
+                <div class="project-card hidden" id="project7">
+                    <div class="project-image">
+                        <img src="assets/project-placeholder.jpg" alt="Project 7" id="project7-img">
+                        <button class="edit-btn" onclick="makeEditable('project7')"><i class="fas fa-edit"></i></button>
+                        <label for="project7-upload" class="upload-btn"><i class="fas fa-upload"></i></label>
+                        <input type="file" id="project7-upload" class="file-upload" accept="image/*" onchange="uploadImage(this, 'project7-img')">
+                    </div>
+                    <div class="project-content">
+                        <h3 contenteditable="false" class="editable">Your Next Project</h3>
+                        <p contenteditable="false" class="editable">Description of your next amazing project. Edit this to showcase your work.</p>
+                        <div class="project-tools">
+                            <span contenteditable="false" class="editable">Tool 1</span>
+                            <span contenteditable="false" class="editable">Tool 2</span>
+                            <span contenteditable="false" class="editable">Tool 3</span>
+                        </div>
+                        <div class="project-reason">
+                            <h4>Why I Built This:</h4>
+                            <p contenteditable="false" class="editable">Explain your motivation and the problem you were trying to solve with this project.</p>
+                        </div>
+                        <div class="project-links">
+                            <div class="github-input-container">
+                                <label for="github-link-7">GitHub Link:</label>
+                                <input type="text" id="github-link-7" class="github-link-input editable" value="https://github.com/username/your-project" readonly>
+                            </div>
+                            <a href="#" class="github-link" onclick="openGitHub('github-link-7')" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Project Button -->
+                <div class="add-project-card" id="add-project">
+                    <button class="add-project-btn" onclick="toggleProject7()">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Another Project</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="skills" id="skills">
-    <div class="container">
-      <h2 class="section-title" contenteditable="false">Skills</h2>
-      <div class="skills-container">
-        <div class="skill-category">
-          <h3 contenteditable="false">Programming</h3>
-          <div class="skill-items">
-            <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div><h4 contenteditable="false">Python</h4></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fas fa-database"></i></div><h4 contenteditable="false">SQL</h4></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fab fa-html5"></i></div><h4 contenteditable="false">HTML</h4></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fab fa-css3-alt"></i></div><h4 contenteditable="false">CSS</h4></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fab fa-js-square"></i></div><h4 contenteditable="false">JavaScript</h4></div>
-          </div>
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Courses</h2>
+            <div class="section-description">
+                <p class="edit-instructions">These certification cards are fully editable. Click the edit button on any certification to modify its details.</p>
+            </div>
+            <div class="certifications-grid">
+                <!-- Certification 1 -->
+                <div class="certification-card" id="cert1">
+                    <button class="edit-btn" onclick="makeEditable('cert1')"><i class="fas fa-edit"></i></button>
+                    <div class="certification-logo">
+                        <img src="assets/cert1.png" alt="Certification 1">
+                    </div>
+                    <div class="certification-content">
+                        <h3 contenteditable="false" class="editable">Machine Learning Specialization</h3>
+                        <p class="issuer" contenteditable="false" class="editable">Stanford University & Coursera</p>
+                        <p class="date" contenteditable="false" class="editable">2023</p>
+                    </div>
+                </div>
+                <!-- Certification 2 -->
+                <div class="certification-card" id="cert2">
+                    <button class="edit-btn" onclick="makeEditable('cert2')"><i class="fas fa-edit"></i></button>
+                    <div class="certification-logo">
+                        <img src="assets/cert2.png" alt="Certification 2">
+                    </div>
+                    <div class="certification-content">
+                        <h3 contenteditable="false" class="editable">Deep Learning Specialization</h3>
+                        <p class="issuer" contenteditable="false" class="editable">DeepLearning.AI</p>
+                        <p class="date" contenteditable="false" class="editable">2022</p>
+                    </div>
+                </div>
+                <!-- Certification 3 -->
+                <div class="certification-card" id="cert3">
+                    <button class="edit-btn" onclick="makeEditable('cert3')"><i class="fas fa-edit"></i></button>
+                    <div class="certification-logo">
+                        <img src="assets/cert3.png" alt="Certification 3">
+                    </div>
+                    <div class="certification-content">
+                        <h3 contenteditable="false" class="editable">Data Science Professional Certificate</h3>
+                        <p class="issuer" contenteditable="false" class="editable">IBM</p>
+                        <p class="date" contenteditable="false" class="editable">2022</p>
+                    </div>
+                </div>
+                <!-- Certification 4 -->
+                <div class="certification-card" id="cert4">
+                    <button class="edit-btn" onclick="makeEditable('cert4')"><i class="fas fa-edit"></i></button>
+                    <div class="certification-logo">
+                        <img src="assets/cert4.png" alt="Certification 4">
+                    </div>
+                    <div class="certification-content">
+                        <h3 contenteditable="false" class="editable">SQL Advanced Certification</h3>
+                        <p class="issuer" contenteditable="false" class="editable">Microsoft</p>
+                        <p class="date" contenteditable="false" class="editable">2021</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="skill-category">
-          <h3 contenteditable="false">Machine Learning & AI</h3>
-          <div class="skill-items">
-            <div class="skill-item"><div class="skill-icon"><i class="fas fa-robot"></i></div><h4 contenteditable="false">ML Algorithms</h4></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fas fa-brain"></i></div><h4 contenteditable="false">Deep Learning</h4></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fas fa-chart-line"></i></div><h4 contenteditable="false">Data Analysis</h4></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fas fa-cloud"></i></div><h4 contenteditable="false">Cloud Platforms</h4></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="projects" id="projects">
-    <div class="container">
-      <h2 class="section-title" contenteditable="false">Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-image">
-            <img src="images/project1.jpg" alt="Project 1">
-          </div>
-          <div class="project-content">
-            <h3 contenteditable="false">Stock Market Prediction</h3>
-            <p contenteditable="false">Built a machine learning model to predict stock prices using historical data and technical indicators.</p>
-          </div>
+    <!-- Video Section -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <h2 class="section-title">Video Presentations</h2>
+            <div class="videos-grid">
+                <!-- Video 1 -->
+                <div class="video-card" id="video1">
+                    <div class="video-thumbnail">
+                        <img src="assets/video1.jpg" alt="Video 1" id="video1-img">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <label for="video1-upload" class="upload-btn"><i class="fas fa-upload"></i></label>
+                        <input type="file" id="video1-upload" class="file-upload" accept="video/*" onchange="uploadVideo(this, 'video1')">
+                    </div>
+                    <div class="video-content">
+                        <h3 contenteditable="false" class="editable">Introduction to My Data Science Journey</h3>
+                        <button class="edit-btn" onclick="makeEditable('video1')"><i class="fas fa-edit"></i></button>
+                        <p contenteditable="false" class="editable">A brief overview of my background, skills, and passion for data science.</p>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="video-card" id="video2">
+                    <div class="video-thumbnail">
+                        <img src="assets/video2.jpg" alt="Video 2" id="video2-img">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <label for="video2-upload" class="upload-btn"><i class="fas fa-upload"></i></label>
+                        <input type="file" id="video2-upload" class="file-upload" accept="video/*" onchange="uploadVideo(this, 'video2')">
+                    </div>
+                    <div class="video-content">
+                        <h3 contenteditable="false" class="editable">Project Walkthrough: Sentiment Analysis Tool</h3>
+                        <button class="edit-btn" onclick="makeEditable('video2')"><i class="fas fa-edit"></i></button>
+                        <p contenteditable="false" class="editable">A detailed explanation of my sentiment analysis project, including methodology and results.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="project-card">
-          <div class="project-image">
-            <img src="images/project2.jpg" alt="Project 2">
-          </div>
-          <div class="project-content">
-            <h3 contenteditable="false">AI Portfolio Website</h3>
-            <p contenteditable="false">Developed this interactive personal portfolio website using HTML, CSS, JavaScript and deployed it on GitHub Pages.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="certifications" id="certifications">
-    <div class="container">
-      <h2 class="section-title" contenteditable="false">Certifications</h2>
-      <div class="certifications-grid">
-        <div class="certification-card">
-          <div class="certification-logo">
-            <img src="images/coursera.png" alt="Coursera">
-          </div>
-          <div class="certification-content">
-            <h3 contenteditable="false">Machine Learning</h3>
-            <p class="issuer" contenteditable="false">Coursera</p>
-            <p class="date" contenteditable="false">Completed: 2024</p>
-          </div>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always open to new opportunities, collaborations, or just a friendly chat about data science and AI.</p>
+                    <div class="social-links">
+                        <div class="social-link-edit">
+                            <button class="edit-btn edit-social-btn" onclick="makeEditable('contact-social')"><i class="fas fa-edit"></i> Edit Social Links</button>
+                            <div id="contact-social">
+                                <div class="social-link-container">
+                                    <input type="hidden" id="contact-linkedin" class="social-link-input editable" value="https://linkedin.com/in/yourusername" readonly>
+                                    <a href="#" onclick="openSocialLink('contact-linkedin')" class="social-icon-btn"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                                <div class="social-link-container">
+                                    <input type="hidden" id="contact-github" class="social-link-input editable" value="https://github.com/yourusername" readonly>
+                                    <a href="#" onclick="openSocialLink('contact-github')" class="social-icon-btn"><i class="fab fa-github"></i></a>
+                                </div>
+                                <div class="social-link-container">
+                                    <input type="hidden" id="contact-email" class="social-link-input editable" value="your.email@example.com" readonly>
+                                    <a href="#" onclick="sendEmail('contact-email')" class="social-icon-btn"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="certification-card">
-          <div class="certification-logo">
-            <img src="images/aws.png" alt="AWS">
-          </div>
-          <div class="certification-content">
-            <h3 contenteditable="false">AWS Cloud Practitioner</h3>
-            <p class="issuer" contenteditable="false">AWS</p>
-            <p class="date" contenteditable="false">Completed: 2025</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="videos" id="videos">
-    <div class="container">
-      <h2 class="section-title" contenteditable="false">Videos</h2>
-      <div class="videos-grid">
-        <div class="video-card">
-          <div class="video-thumbnail">
-            <img src="images/video1-thumbnail.jpg" alt="Video 1">
-            <div class="play-button"><i class="fas fa-play"></i></div>
-          </div>
-          <div class="video-content">
-            <h3 contenteditable="false">AI Project Demo</h3>
-            <p contenteditable="false">Demonstration of my machine learning model predicting stock prices in real-time.</p>
-          </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2023 Divy Yadav - Data Scientist Portfolio. All Rights Reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <section class="contact" id="contact">
-    <div class="container contact-content">
-      <div class="contact-info">
-        <h3 contenteditable="false">Get in Touch</h3>
-        <p contenteditable="false">If you'd like to collaborate or have any questions, feel free to reach out!</p>
-        <div class="social-links">
-          <div class="editable-field">
-            <label>GitHub URL:</label>
-            <input type="text" value="https://github.com/dvy246" disabled>
-          </div>
-          <div class="editable-field">
-            <label>LinkedIn URL:</label>
-            <input type="text" value="https://linkedin.com/in/yourprofile" disabled>
-          </div>
-        </div>
-      </div>
-      <form class="contact-form">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn primary-btn">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-content">
-      <div>Made by Divy &copy; 2025</div>
-      <div class="footer-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js?v=1"></script>
+    <script src="script.js?v=1"></script>
 </body>
 </html>
