@@ -1,3 +1,41 @@
+const ADMIN_PASSWORD = 'yourStrongPassword123';
+
+// Show/hide edit/upload buttons and contenteditable fields
+function setAdminMode(isAdmin) {
+    document.querySelectorAll('.edit-btn, .upload-btn').forEach(btn => {
+        btn.style.display = isAdmin ? 'inline-block' : 'none';
+    });
+    document.querySelectorAll('.editable').forEach(field => {
+        field.contentEditable = isAdmin;
+        if (!isAdmin) field.blur();
+    });
+    // Toggle login/logout buttons
+    document.getElementById('admin-login-btn').style.display = isAdmin ? 'none' : 'inline-block';
+    document.getElementById('admin-logout-btn').style.display = isAdmin ? 'inline-block' : 'none';
+}
+
+// Admin login logic
+document.getElementById('admin-login-btn').onclick = function() {
+    const pwd = prompt('Enter admin password:');
+    if (pwd === ADMIN_PASSWORD) {
+        localStorage.setItem('isAdmin', 'true');
+        setAdminMode(true);
+    } else {
+        alert('Incorrect password.');
+    }
+};
+
+document.getElementById('admin-logout-btn').onclick = function() {
+    localStorage.removeItem('isAdmin');
+    setAdminMode(false);
+};
+
+// On page load, check admin status
+window.onload = function() {
+    setAdminMode(localStorage.getItem('isAdmin') === 'true');
+};
+    
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile navigation toggle
     const menuToggle = document.querySelector('.menu-toggle');
